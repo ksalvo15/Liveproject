@@ -1,0 +1,56 @@
+
+@model IEnumerable<TheatreCMS3.Areas.Rent.Models.RentalHistory>
+
+@{
+    ViewBag.Title = "_PartialView";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+
+@foreach (var item in Model)
+{
+
+    <tr class="RH-index-table-row">
+        <td class="RH-index-damaged" style="width:5%">
+            @if (item.RentalDamaged == true)
+            {
+                <i class="fa-solid fa-circle-xmark" style="color: #e44d1b;"></i>
+            }
+            else
+            {
+                <i class="fa-solid fa-circle-check" style="color: #4eb154;"></i>
+            }
+        </td>
+        <td class="RH-index-rentalname" style="width:10%">
+            <span class="badge badge-dark">@Html.DisplayFor(modelItem => item.Rental)</span>
+        </td>
+        <td class="RH-index-notes" style="width:80%">
+
+            @if (item.RentalDamaged == true)
+            {
+                <span class="d-inline-block text-truncate text-dark" style="max-width: 400px;">@Html.DisplayFor(modelItem => item.DamagesIncurred)</span>
+
+            }
+            else
+            {
+                <span class="d-inline-block text-truncate text-muted" style="max-width: 400px;">@Html.DisplayFor(modelItem => item.DamagesIncurred)</span>
+            }
+
+
+        </td>
+        <td style="width:5%">
+            <div class="RH-index-dropdown">
+                <button class="RH-index-dropbtn"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="RH-index-dropdown-content">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RentalHistoryId })
+                    <br>
+                    @Html.ActionLink("Details", "Details", new { id = item.RentalHistoryId })
+                    <br>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RentalHistoryId })
+                </div>
+            </div>
+        </td>
+    </tr>
