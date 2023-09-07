@@ -108,12 +108,6 @@
     float: right;
 }
 
-
-
-    /*.RH-index-inline-text{
-    margin-right: 10px;
-}*/
-
-    .RH-index-header {
+.RH-index-header {
     color: var(--dark-color);
 }
