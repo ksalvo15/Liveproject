@@ -1,5 +1,5 @@
 # Liveproject
-My Liveproject from 2023 with the Tech Academy
+My two week Liveproject from 2023 with the Tech Academy
 
 I worked on a rental page and I used an MVC framework to create an edit create delte and index page
 on the index page I created a table where all the rental history items would be genrated. I formatted and styled it according to the style guide provided. I then created a sort dropdown 
